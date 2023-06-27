@@ -3,18 +3,46 @@
 {% block title %}Hello QsnController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<h1><img class="orge" src="{{asset('assets/orge2.png')}}" alt=""> Qui sommes-nous ?<img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/src/Controller/QsnController.php'|file_link(0) }}">src/Controller/QsnController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/templates/qsn/index.html.twig'|file_link(0) }}">templates/qsn/index.html.twig</a></code></li>
-    </ul>
+<div class="photovieux">
+<img class="lesvieux" src="{{asset('assets/vieux.jpg')}}" alt="">
 </div>
+<div class="speech">
+<p>Bienvenue à l'hôtel "Holidays", un joyau familial niché au bord de la magnifique plage de notre petite ville côtière. Permettez-nous de vous raconter notre histoire, celle d'un couple marié depuis quarante ans, qui a décidé de donner vie à ses rêves et d'ouvrir cet établissement enchanteur.</p>
+
+<p>Mon nom est Jacques, et ma merveilleuse épouse se prénomme Marie. Après avoir travaillé dur toute notre vie, nous avons réalisé qu'il était temps de savourer les doux plaisirs que nous offre la vie. Inspirés par la beauté pittoresque de cette plage, nous avons ressenti un appel irrésistible à créer un havre de paix où les visiteurs pourraient se détendre et se ressourcer.</p>
+
+<p>Fort de nos expériences et de notre amour pour l'accueil, nous avons commencé cette nouvelle aventure avec des ambitions élevées. Notre objectif était de bâtir un refuge où chaque détail serait soigneusement pensé pour offrir une expérience inoubliable à nos hôtes. Nous voulions créer un lieu où la chaleur de l'hospitalité se marierait à la sérénité de l'océan, où le confort serait au rendez-vous à chaque instant.</p>
+
+<p>Chaque chambre de notre hôtel a été aménagée avec amour et délicatesse, reflétant notre désir de fournir un espace intime et accueillant à nos invités. Des balcons privés offrent une vue imprenable sur les vagues, tandis que les douces brises marines caressent les esprits fatigués. Notre salle de restaurant propose une cuisine raffinée, concoctée avec passion à partir des produits frais de la région, afin de régaler les palais les plus exigeants.</p>
+
+<p>Mais notre véritable trésor réside dans notre équipe, qui partage notre vision et notre dévouement. Chaque membre du personnel est animé par une passion sincère pour le service, s'efforçant de rendre chaque séjour mémorable. Leur sourire chaleureux et leur attention aux détails créent une atmosphère où nos clients se sentent véritablement chez eux.</p>
+
+<p>Pour nous, l'hôtel "Holidays" n'est pas seulement un lieu de villégiature, mais un héritage que nous souhaitons léguer à notre famille et à notre communauté. Nous espérons qu'il deviendra le point de rendez-vous privilégié pour tous ceux qui cherchent à échapper au tumulte de la vie quotidienne et à se reconnecter avec la beauté naturelle et l'harmonie intérieure.</p>
+
+<p>En tant que couple marié depuis quatre décennies, nous avons appris que la clé du bonheur est de poursuivre ses rêves ensemble. L'hôtel "Holidays" est l'incarnation de notre amour, de notre engagement et de notre désir de partager notre bonheur avec ceux qui nous entourent.</p>
+</div>
+<style>
+h1{
+    font-family: 'Dancing Script', cursive ;
+     text-align: center;
+    margin: 30px;
+}
+.lesvieux{
+    height: 400px; 
+    width: 650px; 
+   
+}
+.photovieux{
+     display: flex; 
+    justify-content: center; 
+    margin: 30px;
+
+}
+.speech{
+    margin:50px; 
+}
+</style>
 {% endblock %}

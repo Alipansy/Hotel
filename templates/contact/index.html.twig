@@ -3,18 +3,69 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1><img class="orge" src="{{asset('assets/orge2.png')}}" alt=""> Contactez-nous <img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
+<form>
+  <fieldset>
+    
+    <div class="form">
+    <div class="form-group col-6 mx-auto p-2">
+      <label for="exampleInputEmail1" class="form-label mt-4">Votre Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted ">Nous ne partageons pas vos information avec qui que ce soit.</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleTextarea" class="form-label mx-auto p-2">Votre message</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+    <div class="btn">
+    <button type="button" class="btn btn-warning col-12 ">Envoyer</button>
+    </div>
 </div>
+
+<h2> Nos coordonnées</h2>
+
+<div class="infos">
+  <h5 class="info">Numéro de téléphone : +33 658 458 167</h5>
+  <h5 class="info">E-mail : info@hotelholidays.com</h5>
+  <h5 class="info">Adresse postale : 123 Rue des Vacances, Ville Côtière, Pays, 24568</h5>
+<div class="imageplans">
+<img class="imageplan" src="{{asset('assets/hotel.jpg')}}" alt="">
+</div>
+</div>
+
+
+
+
+
+
+
+<style>
+h1{
+    font-family: 'Dancing Script', cursive ;
+     text-align: center;
+    margin: 30px;
+    }
+.form{
+    font-family:'Quicksand', sans-serif ;
+}
+h2{
+     font-family: 'Dancing Script', cursive ;
+     text-align: center;
+    margin: 30px;
+}
+.info{
+ font-family:'Quicksand', sans-serif ;
+}
+
+.infos{
+    text-align: center; 
+}
+.imageplan{
+    height: 500px; 
+    width: 1000px;
+    border-radius: 50px;
+}
+</style>
 {% endblock %}
