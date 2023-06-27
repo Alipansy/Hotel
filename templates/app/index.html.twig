@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Holidays
+{% endblock %}
+
+{% block body %}
+
+	<div id="carouselExample" class="carousel slide">
+		<div class="carousel-inner">
+			{% for slide in slides %}
+				{% if slide.ordre == 1  %}
+					<div class="carousel-item active">
+					{% else %}
+
+						<div class="carousel-item">
+						{% endif %}
+						<img class="carou" src="{{asset('slider/' ~ slide.photo)}}" class="height:200 width:500" alt="">
+
+					</div>
+				
+            {% endfor %}
+			</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+
+			<div class="bienvenue text-center my-5">
+				<h1 class="titre"><img class="orge" src="{{asset('assets/orge2.png')}}" alt="">Bienvenue à l'Hôtel Holidays !<img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
+			</div>
+			<div class="intro">
+				<h3 class="text1">Niché au cœur d'un cadre idyllique, à quelques pas de la plage de sable fin, l'Hôtel Holydays vous invite à vivre une expérience inoubliable alliant luxe, confort et détente. Avec ses services haut de gamme, ses chambres somptueuses, son restaurant quatre étoiles et son spa de luxe, notre établissement se positionne comme l'adresse de référence pour un séjour mémorable.</h3>
+
+				<div class="chambres">
+					<h3>Chambres luxueuses :</h3>
+					<img class="photo rounded-circle mx-auto" src="{{asset('assets/room4.jpg')}}" alt="">
+
+					<p>Offrant un mélange harmonieux de design contemporain et d'élégance intemporelle, nos chambres luxueuses sont conçues pour vous offrir un confort absolu. Chaque chambre est soigneusement aménagée avec des matériaux de qualité supérieure et des équipements modernes. Les vues panoramiques sur la mer et les équipements haut de gamme garantissent une expérience de séjour exceptionnelle.</p>
+				</div>
+				<div class="restaurant">
+					<h3>Restaurant "Le Baratie" **** :</h3>
+					<img class="photo rounded-circle mx-auto" src="{{asset('assets/resto2.jpg')}}" alt="">
+
+					<p>Notre restaurant quatre étoiles est un véritable paradis pour les amateurs de gastronomie. Notre talentueux chef et son équipe créent des plats exquis en utilisant des ingrédients frais et de saison. Que ce soit pour un petit-déjeuner gourmand, un déjeuner léger en terrasse ou un dîner romantique, notre restaurant offre une expérience culinaire raffinée accompagnée d'un service attentionné et d'une atmosphère élégante.</p>
+				</div>
+				<div class="lespa">
+					<h3>Spa de luxe "Holispa" :</h3>
+					<img class="photo rounded-circle mx-auto" src="{{asset('assets/spapetit.jpg')}}" alt="">
+
+
+					<p>Pour une relaxation ultime, notre spa de luxe est l'endroit parfait pour se ressourcer et se revitaliser. Laissez nos thérapeutes expérimentés vous choyer avec une gamme de soins et de massages apaisants. Profitez des installations de bien-être, dont une piscine chauffée, un sauna et un hammam, pour vous détendre et vous revitaliser. Notre équipe dévouée veillera à ce que vous vous sentiez choyé et revitalisé de la tête aux pieds.</p>
+				</div>
+
+				<div class="speech">
+
+					<p><img src="{{asset('assets/palmier.png')}}" alt="">Que vous soyez à la recherche d'une escapade romantique, d'un séjour en famille ou d'un moment de détente entre amis, l'Hôtel Plage Paradis est l'endroit idéal pour créer des souvenirs précieux. Laissez-nous prendre soin de vous et vivre des moments inoubliables dans un cadre exceptionnel.
+																				
+																				Réservez dès maintenant votre séjour à l'Hôtel Holidays et laissez-nous faire de votre expérience un véritable paradis sur terre !
+						<img src="{{asset('assets/palmier.png')}}" alt=""></p>
+
+				</div>
+			</div>
+
+
+		{% endblock %}
