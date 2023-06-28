@@ -3,18 +3,160 @@
 {% block title %}Hello SpaController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1><img class="orge" src="{{asset('assets/orge2.png')}}" alt=""> Holispa <img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/src/Controller/SpaController.php'|file_link(0) }}">src/Controller/SpaController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/templates/spa/index.html.twig'|file_link(0) }}">templates/spa/index.html.twig</a></code></li>
-    </ul>
+<div class="ima">
+<img class="lespa" src="{{asset('assets/spaa.webp')}}" alt="">
 </div>
+
+<div class="text">
+ <h2>Votre havre de détente en bord de mer</h2>
+<p>Découvrez le Spa Oasis, un véritable sanctuaire dédié à la relaxation et au bien-être, idéalement situé en bord de mer. Notre spa luxueux offre une gamme complète de soins revitalisants pour apaiser votre corps et votre esprit.</p>
+<p>Plongez dans nos piscines d'eau salée, profitez des jacuzzis chauffés ou laissez-vous tenter par un massage relaxant prodigué par nos thérapeutes experts. Notre équipe attentionnée saura vous choyer et vous offrir une expérience inoubliable.</p>
+<p>Avec une vue imprenable sur l'océan, notre spa vous permet de vous ressourcer dans un cadre serein et apaisant. Que vous souhaitiez vous détendre après une journée bien remplie ou simplement vous offrir un moment de tranquillité, le Spa Oasis est l'endroit idéal.</p>
+<p>Nous proposons également des rituels de spa personnalisés, des soins du visage, des gommages corporels et bien plus encore. Offrez-vous une parenthèse de bien-être et de relaxation lors de votre séjour dans notre hôtel en bord de mer.</p>
+<p>Ne manquez pas l'occasion de vous offrir une expérience unique au Spa Oasis. Réservez dès maintenant et laissez-nous prendre soin de vous dans notre oasis de tranquillité.</p>
+</div>
+
+<h2>Carte des soins</h2>
+
+ <div class="card"> 
+ <div class="title">Soins du Visage</div>
+ <div class="div"> <img class="photoss rounded-circle mx-auto" src="{{asset('assets/visage.jpg')}}" alt="">
+</div>
+   
+    <div class="subtitle">Soins Hydratants</div>
+    <div class="description">- Soin Hydratant Intense</div>
+    <div class="description">- Soin Rajeunissant à l'Or</div>
+    <div class="description">- Soin Éclat du Teint</div>
+    <div class="subtitle">Traitements Anti-âge</div>
+    <div class="description">- Traitement Raffermissant Anti-âge</div>
+    <div class="description">- Traitement Régénérant Collagène</div>
+    <div class="description">- Traitement Lifting aux Algues</div>
+  </div>
+  
+  <div class="card">
+  <div class="title">Soins du Corps</div>
+   <div class="div"> <img class="photoss rounded-circle mx-auto" src="{{asset('assets/corps.jpg')}}" alt="">
+</div>
+    
+    <div class="subtitle">Massages</div>
+    <div class="description">- Massage Signature du Spa</div>
+    <div class="description">- Massage Relaxant aux Huiles Essentielles</div>
+    <div class="description">- Massage aux Pierres Chaudes</div>
+    <div class="subtitle">Traitements Spa</div>
+    <div class="description">- Gommage Corporel aux Sels Marins</div>
+    <div class="description">- Enveloppement Hydratant à la Rose</div>
+    <div class="description">- Rituel de Détente Complet</div>
+  </div>
+
+  <div class="card">
+  <div class="title">Soins des Mains et des Pieds</div>
+   <div class="div"> <img class="photoss rounded-circle mx-auto" src="{{asset('assets/mains.jpg')}}" alt="">
+</div>
+    
+    <div class="subtitle">Manucure</div>
+    <div class="description">- Manucure Spa avec Soin Nourrissant</div>
+    <div class="description">- Manucure Express</div>
+    <div class="description">- Pose de Vernis Classique</div>
+    <div class="subtitle">Pédicure</div>
+    <div class="description">- Pédicure Spa avec Gommage Rafraîchissant</div>
+    <div class="description">- Pédicure Classique</div>
+    <div class="description">- Pose de Vernis Semi-permanent</div>
+  </div>
+
+<div class="ima">
+<img class="lespa" src="{{asset('assets/lespa.jpg')}}" alt="">
+
+</div>
+<div class="cardA"> 
+<div class="avis">
+<h2><img class="fleur" src="{{asset('assets/etoile.png')}}" alt="">Avis <img class="fleur" src="{{asset('assets/etoile.png')}}" alt=""></h2></div>
+</div>
+<style>
+h1{
+     font-family: 'Dancing Script', cursive ;
+    text-align: center;
+    margin: 30px;
+}
+
+.lespa{
+height: 800px;
+width: 1500px; 
+
+
+}
+.text{
+    margin: 50px; 
+    text-align: center; 
+}
+h2{
+    font-family: 'Dancing Script', cursive ;
+    text-align: center; 
+}
+
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+     display: inline-block;
+      width: calc(33.33% - 20px);
+      margin-right: 10px;
+      vertical-align: top;
+      
+      
+     
+    }
+    
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-family: 'Dancing Script', cursive ;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+       font-family: 'Quicksand', sans-serif;
+      
+    }
+    
+    .description {
+      font-size: 14px;
+      margin-bottom: 5px;
+       font-family: 'Quicksand', sans-serif;
+    }
+
+    .photoss{
+        height : 200px; 
+        width: 200px; 
+        margin: 20px; 
+        
+    }
+    .ima{
+        width: 100%; 
+         display: flex;
+         justify-content: center; 
+         
+          
+  
+    }
+    .fleur{
+        height: 36px; 
+        width: 36px; 
+    }
+    .cardA{
+      width:100%; 
+    }
+</style>
 {% endblock %}

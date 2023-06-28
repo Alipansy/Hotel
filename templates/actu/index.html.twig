@@ -3,18 +3,97 @@
 {% block title %}Hello ActuController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/src/Controller/ActuController.php'|file_link(0) }}">src/Controller/ActuController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/templates/actu/index.html.twig'|file_link(0) }}">templates/actu/index.html.twig</a></code></li>
-    </ul>
+<h1 class="letitre"><img class="orge" src="{{asset('assets/orge2.png')}}" alt="">Les actus<img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
+<div class="tout">
+<div class="article">
+    <article>
+    <a class="lien"href="https://journalduluxe.fr/fr/lifestyle/travel"> <h2>Bonne nouvelle !</h2>
+        <p>Date : 1er janvier 2023</p>
+        <p>Une nouvelle étude révèle que les hôtels cinq étoiles ont connu une augmentation de 15% de leur fréquentation en 2022, grâce à l'essor du tourisme de luxe dans le monde entier.</p></a>
+       
+    </article>
 </div>
+<div class="article">
+    <article>
+    <a class="lien"href="https://journalduluxe.fr/fr/lifestyle/travel"> <h2>Pratique, non ? </h2>
+        <p>Date : 15 février 2023</p>
+        <p>Un groupe hôtelier international a récemment lancé une application mobile révolutionnaire qui permet aux clients de réserver une chambre, de commander des services en chambre et de contrôler les équipements de leur chambre à distance.</p></a>
+       
+    </article>
+</div>
+<div class="article">
+    <article>
+    <a class="lien"href="https://journalduluxe.fr/fr/lifestyle/travel"> <h2>On a hâte de gouter ça !</h2>
+        <p>Date : 5 mars 2023</p>
+        <p>Un célèbre chef étoilé ouvrira bientôt un restaurant exclusif dans un hôtel de luxe en partenariat avec une chaîne hôtelière renommée, offrant aux clients une expérience gastronomique inoubliable.</p></a>
+       
+    </article>
+</div>
+<div class="article">
+    <article>
+    <a class="lien"href="https://journalduluxe.fr/fr/lifestyle/travel">   <h2>Allo la Terre</h2>
+        <p>Date : 20 avril 2023</p>
+        <p>Un hôtel écologique situé au bord de la mer a récemment été récompensé pour ses efforts en matière de durabilité, en remportant le prestigieux prix international de l'hôtellerie durable.</p></a>
+     
+    </article>
+    </div>
+<div class="article">
+    <article>
+    <a class="lien"href="https://journalduluxe.fr/fr/lifestyle/travel">  <h2>La remontada des lieux touristiques</h2>
+        <p>Date : 10 mai 2023</p>
+        <p>Une nouvelle tendance émerge dans l'industrie hôtelière : les hôtels boutiques. Ces établissements de petite taille, au design unique et offrant des services personnalisés, attirent de plus en plus de voyageurs en quête d'expériences uniques.</p></a>
+      
+    </article>
+</div>
+<div class="article">
+    <article>
+    <a class="lien "href="https://journalduluxe.fr/fr/lifestyle/travel"> <h2>Il est si beau !</h2>
+        <p>Date : 1er juin 2023</p>
+        <p>Un hôtel emblématique au cœur d'une grande ville a été entièrement rénové, conservant son charme historique tout en offrant des équipements modernes pour répondre aux besoins des voyageurs d'aujourd'hui.</p></a>
+       
+    </article>
+</div>
+<div class="article">
+    <article>
+    <a class="lien"href="https://journalduluxe.fr/fr/lifestyle/travel">  <h2>l'hotel Holidays</h2>
+        <p>Date : 15 juin 2023</p>
+        <p>Un nouvel hôtel de luxe vient d'ouvrir ses portes dans une destination prisée, offrant des suites spacieuses, des spas somptueux et une vue imprenable sur l'océan, attirant ainsi les voyageurs en quête de détente et de raffinement.</p></a>
+      
+    </article>
+</div>
+</div>
+<style>
+.article{
+    border: solid 1px; 
+    border-radius: 50px;
+    
+}
+.article:hover{
+     color: #bdb213;
+}
+
+article{
+    margin : 15px; 
+}
+
+.tout{
+    display: flex; 
+    flex-direction: column;
+    margin :60px;
+    gap: 20px;
+}
+.lien{
+    text-decoration : none; 
+    color : #333
+}
+.letitre{
+    font-family: 'Dancing Script', cursive ;
+    text-align: center;
+    margin: 30px;
+}
+h2{
+     font-family: 'Dancing Script', cursive ;
+}
+
+</style>
 {% endblock %}

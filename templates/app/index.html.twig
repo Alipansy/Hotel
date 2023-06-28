@@ -14,7 +14,7 @@
 
 						<div class="carousel-item">
 						{% endif %}
-						<img class="carou" src="{{asset('slider/' ~ slide.photo)}}" class="height:200 width:500" alt="">
+						<img class="carou" src="{{asset('slider/' ~ slide.photo)}}" class="height:200 width:500" style="object-fit: cover; " alt="">
 
 					</div>
 				
@@ -38,19 +38,19 @@
 
 				<div class="chambres">
 					<h3>Chambres luxueuses :</h3>
-					<img class="photo rounded-circle mx-auto" src="{{asset('assets/room4.jpg')}}" alt="">
+					<a href="{{path('app_chambre')}}"><img class="photo rounded-circle mx-auto" src="{{asset('assets/room4.jpg')}}" alt=""></a>
 
 					<p>Offrant un mélange harmonieux de design contemporain et d'élégance intemporelle, nos chambres luxueuses sont conçues pour vous offrir un confort absolu. Chaque chambre est soigneusement aménagée avec des matériaux de qualité supérieure et des équipements modernes. Les vues panoramiques sur la mer et les équipements haut de gamme garantissent une expérience de séjour exceptionnelle.</p>
 				</div>
 				<div class="restaurant">
 					<h3>Restaurant "Le Baratie" **** :</h3>
-					<img class="photo rounded-circle mx-auto" src="{{asset('assets/resto2.jpg')}}" alt="">
+					<a href="{{path('app_resto')}}"><img class="photo rounded-circle mx-auto" src="{{asset('assets/resto2.jpg')}}" alt=""></a>
 
 					<p>Notre restaurant quatre étoiles est un véritable paradis pour les amateurs de gastronomie. Notre talentueux chef et son équipe créent des plats exquis en utilisant des ingrédients frais et de saison. Que ce soit pour un petit-déjeuner gourmand, un déjeuner léger en terrasse ou un dîner romantique, notre restaurant offre une expérience culinaire raffinée accompagnée d'un service attentionné et d'une atmosphère élégante.</p>
 				</div>
 				<div class="lespa">
 					<h3>Spa de luxe "Holispa" :</h3>
-					<img class="photo rounded-circle mx-auto" src="{{asset('assets/spapetit.jpg')}}" alt="">
+					<a href="{{path('app_spa')}}"><img class="photo rounded-circle mx-auto" src="{{asset('assets/spapetit.jpg')}}" alt=""></a>
 
 
 					<p>Pour une relaxation ultime, notre spa de luxe est l'endroit parfait pour se ressourcer et se revitaliser. Laissez nos thérapeutes expérimentés vous choyer avec une gamme de soins et de massages apaisants. Profitez des installations de bien-être, dont une piscine chauffée, un sauna et un hammam, pour vous détendre et vous revitaliser. Notre équipe dévouée veillera à ce que vous vous sentiez choyé et revitalisé de la tête aux pieds.</p>

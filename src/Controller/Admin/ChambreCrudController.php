@@ -23,11 +23,11 @@ class ChambreCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')->hideOnForm(),
             TextField::new('titre'),
             TextEditorField::new('description_courte'),
             TextEditorField::new('description_longue'),
-            ImageField::new('photo')->setBasePath('photo')->setUploadDir('public/photos')->setUploadedFileNamePattern('[slug]-[timestamp].[extension]'),
+            ImageField::new('photo')->setBasePath('photo')->setUploadDir('public/assets')->setUploadedFileNamePattern('[slug]-[timestamp].[extension]'),
             NumberField::new('prix'),
             DateTimeField::new('date_enregistrement')->setFormat('d/M/Y à H:m:s')->hideOnForm(),
 

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChambreController!
+{% endblock %}
+
+
+{% block body %}
+	<h1><img class="orge" src="{{asset('assets/orge2.png')}}" alt="">Chambres simples<img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
+
+
+	<div class="container">
+		<section class="row articles">
+
+			{% for item in chambre %}
+
+
+				<div class="col-md-3 mt-3 px-2">
+					<div class="card  p-3">
+						<img class="img-fluid" src="{{asset("images/article/" ~ item.photo)}}" alt="">
+						<div class="card-body">
+							<h5 class="card-title">{{item.titre}}</h5>
+
+							<p class="card-text">{{ item.description_courte|slice(0, 100)}}</p>
+							<p class="card-text">{{ item.prix}}€/nuit</p>
+
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</section>
+	</div>
+
+
+	<style>
+		h1 {
+			font-family: 'Dancing Script', cursive;
+			text-align: center;
+			margin: 30px;
+		}
+	</style>
+{% endblock %}

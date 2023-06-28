@@ -3,18 +3,194 @@
 {% block title %}Hello RestoController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1>Le Baratie ****</h1>
+<div class="leresto">
+<img class="restau" src="{{asset('assets/restoplage.jpg')}}" alt="">
+</div>
+<div class="intro">
+<p>Bienvenue au "Le Baratié", un restaurant 4 étoiles niché au cœur de l'hôtel "Holidays", offrant une vue imprenable sur la plage environnante. Laissez-vous emporter par une expérience gastronomique inoubliable où les saveurs de la mer se marient avec élégance.</p>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<p>Au sein de notre établissement, vous découvrirez un chef de cuisine au talent exceptionnel, malgré sa jambe manquante qui ne fait qu'ajouter à son charme singulier. Avec une passion dévorante pour les fruits de mer, il prépare des plats d'une finesse et d'une créativité remarquables, repoussant sans cesse les limites de la gastronomie.</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/src/Controller/RestoController.php'|file_link(0) }}">src/Controller/RestoController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/stagiaire/hotel-eval/templates/resto/index.html.twig'|file_link(0) }}">templates/resto/index.html.twig</a></code></li>
+<p>Bien que parfois grognon, notre chef apporte une touche personnelle à chaque assiette, transmettant son amour pour les saveurs exquises et les combinaisons audacieuses. Son expertise culinaire se reflète dans chaque bouchée, faisant du "Le Baratié" une destination prisée des amateurs de cuisine raffinée.</p>
+
+<p>Que vous soyez à la recherche d'un dîner romantique en bord de plage ou d'une célébration spéciale, notre restaurant vous promet une expérience gustative mémorable. Laissez-vous envoûter par la magie des lieux, sublimée par le talent et la créativité de notre chef, et savourez un voyage culinaire sans pareil au "Le Baratié" de l'hôtel "Holidays".</p>
+</div>
+   <style>
+    .tab {
+      display: none;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      background-color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab-button:hover {
+      background-color: #f1f1f1;
+    }
+
+    .tab-button.active {
+      background-color: #dddddd;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .description {
+      font-size: 14px;
+      margin-bottom: 5px;
+      
+    }
+    .intro{
+margin: 150px; 
+texte-align: center; 
+    }
+    h5{
+        font-family: 'Quicksand', sans-serif;
+    }
+    h6{
+        font-family: 'Quicksand', sans-serif;
+    }
+  </style>
+  <script>
+    function ouvrirOnglet(evt, ongletNom) {
+      var i, tabcontent, tabbuttons;
+      tabcontent = document.getElementsByClassName("tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tabbuttons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].classList.remove("active");
+      }
+      document.getElementById(ongletNom).style.display = "block";
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</head>
+<body>
+  <h1>Menu du Restaurant <img class="menuicon" src="{{asset('assets/menu.png')}}"</h1>
+  <div class="tab-buttons">
+    <button class="tab-button active" onclick="ouvrirOnglet(event, 'entrees')">Entrées</button>
+    <button class="tab-button" onclick="ouvrirOnglet(event, 'plats')">Plats principaux</button>
+    <button class="tab-button" onclick="ouvrirOnglet(event, 'desserts')">Desserts</button>
+    <button class="tab-button" onclick="ouvrirOnglet(event, 'vins')">Vins</button>
+    <button class="tab-button" onclick="ouvrirOnglet(event, 'cocktails')">Cocktails</button>
+  </div>
+
+  <div id="entrees" class="tab" style="display: block;">
+    <div class="title">Entrées</div>
+    <img class="plats rounded-circle mx-auto" src="{{asset('assets/crevettes.jpg')}}"
+    <ul class="description">
+      <h5>Cocktail de crevettes</h5>
+      <h6>Une délicieuse combinaison de crevettes fraîches, de sauce cocktail savoureuse, de citron frais et d'une touche d'aneth pour une explosion de saveurs marines.</h6>
+      <h5>Calamars croustillants</h5>
+      <h6>Des calamars tendres et croustillants, délicatement frits et accompagnés d'une sauce dip épicée.</h6>
+      <h5>Huîtres Rockefeller</h5>
+      <h6>Des huîtres fraîches garnies d'une délicieuse préparation à base d'épinards, de bacon croustillant, de fromage gratiné et d'une touche d'anis étoilé.</h6>
+    </ul>
+  </div>
+
+  <div id="plats" class="tab">
+    <div class="title">Plats principaux</div>
+        <img class="plats rounded-circle mx-auto" src="{{asset('assets/homard.jpg')}}"
+    <ul class="description">
+      <ul class="description">
+      <h5>Homard Grillé à la Sauce Beurre Citronné </h5>
+      <h6>Un homard juteux et tendre, grillé à la perfection et servi avec une sauce au beurre délicatement parfumée au citron.</h6>
+      <h5>Risotto aux Fruits de Mer </h5>
+      <h6>Un savoureux risotto crémeux agrémenté de crevettes jumbo, de moules et de morceaux de calamars, le tout garni d'une touche de persil frais.</h6>
+      <h5>Filet de Bar Poêlé aux Herbes de Provence </h5>
+      <h6>Un filet de bar d'une fraîcheur incomparable, poêlé avec des herbes de Provence aromatiques et accompagné d'une sauce légère à base de vin blanc.</h6>
     </ul>
 </div>
+<div id="desserts" class="tab">
+    <div class="title">Desserts</div>
+        <img class="plats rounded-circle mx-auto" src="{{asset('assets/choco.jpg')}}"
+    <ul class="description">
+      <ul class="description">
+      <h5>Fondant au Chocolat Noir </h5>
+      <h6>Un délicieux fondant au chocolat noir à la texture moelleuse, accompagné d'une sauce au chocolat veloutée et d'une boule de glace à la vanille pour une explosion de saveurs chocolatées.</h6>
+      <h5>Tarte Tatin aux Pommes Caramélisées  </h5>
+      <h6>Une tarte renversée aux pommes juteuses et fondantes, caramélisées à la perfection, avec une pâte feuilletée croustillante et une boule de glace à la cannelle pour une touche de gourmandise supplémentaire.</h6>
+      <h5>Crème Brûlée à la Vanille </h5>
+      <h6>Une crème onctueuse à la vanille, recouverte d'une fine couche de caramel croustillant, servie avec des fruits frais de saison pour apporter une note de fraîcheur à cette classique gourmandise.</h6>
+    </ul>
+</div>
+
+<div id="vins" class="tab">
+    <div class="title">Vins</div>
+        <img class="plats rounded-circle mx-auto" src="{{asset('assets/vin.jpg')}}"
+    <ul class="description">
+      <ul class="description">
+      <h5>Vin Blanc - Chardonnay Grand Cru </h5>
+      <h6>Un chardonnay grand cru d'une région renommée, avec des arômes subtils de fruits tropicaux, une élégante minéralité et une belle structure en bouche. Parfait pour accompagner les fruits de mer et les plats délicats.</h6>
+      <h5> Vin Rouge - Cabernet Sauvignon Millésime </h5>
+      <h6>Un cabernet sauvignon millésime d'une qualité exceptionnelle, offrant des notes riches de fruits rouges mûrs, d'épices et de cèdre. Sa structure tannique équilibrée et sa longue finale en font un choix idéal pour accompagner les viandes rouges et les plats riches en saveurs.</h6>
+      <h5> Vin Rosé - Côtes de Provence Rosé</h5>
+      <h6>Un délicat vin rosé en provenance des Côtes de Provence, avec sa belle robe pâle et ses arômes frais de fruits rouges, d'agrumes et de fleurs. Son équilibre et sa fraîcheur en font un compagnon idéal pour les salades, les plats légers et les moments de détente.</h6>
+    </ul>
+</div>
+
+<div id="cocktails" class="tab">
+    <div class="title">Cocktails</div>
+        <img class="plats rounded-circle mx-auto" src="{{asset('assets/cocktail.jpg')}}"
+    <ul class="description">
+      <ul class="description">
+      <h5> Sunset Paradise</h5>
+      <h6>Un cocktail tropical rafraîchissant mélangeant du rhum blanc, du jus d'ananas, du jus de cranberry et une touche de sirop de grenadine. Servi dans un verre à cocktail avec une tranche d'ananas et une cerise, ce cocktail évoque le coucher de soleil sur une plage paradisiaque.</h6>
+      <h5> Ocean Breeze</h5>
+      <h6>Un cocktail rafraîchissant qui capture la fraîcheur de l'océan. Il est préparé avec de la vodka, du jus de citron vert, du sirop de sucre de canne et une touche de curaçao bleu. Garni d'une rondelle de citron vert, ce cocktail évoque la brise marine et les vagues de l'océan.</h6>
+      <h5>Tropical Mojito </h5>
+      <h6>Une variation exotique du classique mojito, ce cocktail est préparé avec du rhum blanc, du jus de lime frais, du sirop de sucre de canne, des feuilles de menthe et une purée de fruits tropicaux tels que la mangue ou l'ananas. C'est un mélange fruité et rafraîchissant qui évoque les tropiques.</h6>
+    </ul>
+</div>
+
+<style>
+h1{
+     font-family: 'Dancing Script', cursive ;
+    text-align: center;
+    margin: 30px;
+}
+.restau{
+    height: 800px;
+width: 1500px; 
+}
+.leresto{
+     width: 100%; 
+         display: flex;
+         justify-content: center; 
+}
+.menuicon{
+    height:64px; 
+    width: 64px; 
+}
+.plats{
+     height : 200px; 
+        width: 200px; 
+        margin: 20px; 
+}
+</style>
 {% endblock %}
