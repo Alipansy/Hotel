@@ -1,41 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ChambreController!
-{% endblock %}
-
+{% block title %}Hello ChambreController!{% endblock %}
 
 {% block body %}
-	<h1><img class="orge" src="{{asset('assets/orge2.png')}}" alt="">Chambres simples<img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
+    <h1><img class="orge" src="{{asset('assets/orge2.png')}}" alt="">Chambres simples<img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
 
+    <div class="container">
+        <div class="row">
+            {% for chambre in chambres %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img class="card-img-top" src="{{ asset('assets/' ~ chambre.photo) }}" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ chambre.titre }}</h5>
+                            <p class="card-text">{{ chambre.description_courte|striptags }}</p>
+                            <p class="card-text">{{ chambre.prix }}€/nuit</p>
+                            <a href="{{ path('app_resa', {id: chambre.id}) }}" class="btn btn-warning">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
-	<div class="container">
-		<section class="row articles">
+    <style>
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            margin: 30px;
+        }
 
-			{% for item in chambre %}
+        .card {
+            border: none;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
 
+        .card:hover {
+            transform: translateY(-3px);
+        }
 
-				<div class="col-md-3 mt-3 px-2">
-					<div class="card  p-3">
-						<img class="img-fluid" src="{{asset("images/article/" ~ item.photo)}}" alt="">
-						<div class="card-body">
-							<h5 class="card-title">{{item.titre}}</h5>
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+        }
 
-							<p class="card-text">{{ item.description_courte|slice(0, 100)}}</p>
-							<p class="card-text">{{ item.prix}}€/nuit</p>
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
 
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		</section>
-	</div>
+        .card-text {
+            color: #888;
+        }
 
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
 
-	<style>
-		h1 {
-			font-family: 'Dancing Script', cursive;
-			text-align: center;
-			margin: 30px;
-		}
-	</style>
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+    </style>
 {% endblock %}

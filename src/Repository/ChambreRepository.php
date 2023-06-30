@@ -16,6 +16,10 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ChambreRepository extends ServiceEntityRepository
 {
+    public static function getEntityFqcn(): string
+    {
+        return Chambre::class;
+    }
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Chambre::class);
@@ -39,28 +43,47 @@ class ChambreRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Chambre[] Returns an array of Chambre objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('c.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    //    /**
+    //     * @return Chambre[] Returns an array of Chambre objects
+    //     */
+    public function simple($value): array
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.prix <= :val')
+            ->setParameter('val', $value)
+            ->orderBy('c.prix', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+    public function confort($value): array
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.prix >= :minPrice')
+            ->andWhere('c.prix <= :maxPrice')
+            ->setParameter('minPrice', 200)
+            ->setParameter('maxPrice', 500)
+            ->orderBy('c.prix', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+    public function suite($value): array
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.prix >= :val')
+            ->setParameter('val', $value)
+            ->orderBy('c.prix', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 
-//    public function findOneBySomeField($value): ?Chambre
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+
+    //    public function findOneBySomeField($value): ?Chambre
+    //    {
+    //        return $this->createQueryBuilder('c')
+    //            ->andWhere('c.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

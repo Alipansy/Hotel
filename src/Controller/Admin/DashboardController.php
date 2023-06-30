@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller\Admin;
-
+use App\Entity\Commande;
 use App\Entity\User;
 use App\Entity\Chambre;
 use App\Entity\Slider;
@@ -11,6 +11,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+
+
 
 class DashboardController extends AbstractDashboardController
 {
@@ -57,7 +59,8 @@ class DashboardController extends AbstractDashboardController
             MenuItem::subMenu('Hotel', 'fa fa-hotel')->setSubItems([
             MenuItem::linkToCrud('chambre','fa fa-bed', Chambre::class),
             MenuItem::linkToCrud('slider','fa fa-image', Slider::class),
-               
+            MenuItem::linkToCrud('commande','fa fa-pen', Commande::class),
+
  
             ]),
             MenuItem::section('Retour au site'),

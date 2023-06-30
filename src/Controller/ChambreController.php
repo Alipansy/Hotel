@@ -17,16 +17,31 @@ class ChambreController extends AbstractController
         ]);
     }
     #[Route('/simple', name: 'app_simple')]
-    public function simple(): Response
-    {
-        return $this->render('chambre/simple.html.twig');
-    }
-    public function show(ChambreRepository $repo ) : Response
-    {
-        $chambre= $repo->findBy([],['prix' < 200]);
-        
-        return $this->render('app/simple.html.twig', [
-            'chambre' => $chambre
-        ]);
-    }
+public function simple(ChambreRepository $repo): Response
+{
+    $chambres = $repo->simple(200);
+
+    return $this->render('chambre/simple.html.twig', [
+        'chambres' => $chambres,
+    ]);
+}
+#[Route('/confort', name: 'app_confort')]
+public function confort(ChambreRepository $repo): Response
+{
+    $chambres = $repo->confort(200);
+
+    return $this->render('chambre/confort.html.twig', [
+        'chambres' => $chambres,
+    ]);
+}
+#[Route('/suite', name: 'app_suite')]
+public function suite(ChambreRepository $repo): Response
+{
+    $chambres = $repo->suite(500);
+
+    return $this->render('chambre/suite.html.twig', [
+        'chambres' => $chambres,
+    ]);
+}
+
 }

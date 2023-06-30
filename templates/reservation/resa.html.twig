@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReservationController!{% endblock %}
+
+{% block body %}
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            margin: 30px;
+        }
+
+        .container {
+            margin-top: 3rem;
+        }
+
+        .card {
+            background-color: #fff;
+            color: #000;
+            border: none;
+        }
+
+        .card-header {
+            background-color: #fff;
+            color: #000;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .card-body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .form-control {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #ccc;
+            border-radius: 0;
+        }
+
+        .btn-outline-warning {
+            color: #000;
+            border-color: #000;
+        }
+    </style>
+
+    <h1><img class="orge" src="{{asset('assets/orge2.png')}}" alt="">Votre réservation<img class="orge" src="{{asset('assets/orge.png')}}" alt=""></h1>
+    <div class="container mt-3">
+        <h2 class="text-center my-4">Veuillez sélectionner une date d'arrivée et de départ</h2>
+
+        <div class="col-md-10 mx-auto">
+            <div class="card mb-3">
+                <h3 class="card-header">{{ room.titre }}</h3>
+                <img class="card-img-top" src="{{ asset('assets/' ~ room.photo) }}" alt="">
+
+                <div class="card-body">
+                    <p class="card-text">{{ room.description_longue }}</p>
+                    <p class="card-text text-end fw-bold">{{ room.prix }}€/j</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 mx-auto card p-5">
+            {{ form_start(form) }}
+
+            {{ form_row(form.date_arrivee, {'attr': {'class': 'form-control mb-3'}}) }}
+            {{ form_row(form.date_depart, {'attr': {'class': 'form-control mb-3'}}) }}
+
+            <h2>Vos informations</h2>
+
+            {{ form_row(form.prenom, {'attr': {'class': 'form-control mb-3'}}) }}
+            {{ form_row(form.nom, {'attr': {'class': 'form-control mb-3'}}) }}
+            {{ form_row(form.telephone, {'attr': {'class': 'form-control mb-3'}}) }}
+            {{ form_row(form.email, {'attr': {'class': 'form-control mb-3'}}) }}
+
+            <div class="text-end mt-4">
+                <button type="submit" class="btn btn-outline-warning">Réserver à ces dates</button>
+            </div>
+			
+            {{ form_end(form) }}
+        </div>
+		
+    </div>
+{% endblock %}
+
