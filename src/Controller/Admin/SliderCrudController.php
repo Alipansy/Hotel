@@ -30,6 +30,7 @@ class SliderCrudController extends AbstractCrudController
             ImageField::new('photo')->setUploadDir('public/slider')->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')->onlyWhenUpdating()->setFormTypeOptions([
                 'required'=> false,
             ]),
+            ImageField::new('photo')->setUploadDir('public/slider')->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')->onlyWhenCreating(),
              ImageField::new('photo')->setBasePath('slider')->hideOnForm(),
             NumberField::new('ordre'),
             DateTimeField::new('date_enregistrement')->setFormat('d/M/Y à H:m:s')->hideOnForm()
